@@ -1,0 +1,31 @@
+.cocktail-card-holder {
+  &:hover {
+    color: #fff;
+    text-decoration: none
+  }
+}
+
+.cocktail-card {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px dark-gray;
+  h3 {
+    color: #fff;
+    font-size: 22px;
+  }
+  ul {
+
+  }
+  li {
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+
