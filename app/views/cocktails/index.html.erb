@@ -43,6 +43,7 @@
 <div class="grid">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail), class: 'cocktail-card-holder' do %>
+    <% if cocktail.photo.attached? %>
       <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
         <h3><%= cocktail.name %></h3>
         <ul>
@@ -50,6 +51,7 @@
             <li><%= dose.ingredient.name %></li>
           <% end %>
         </ul>
+      <% end %>
       </div>
     <% end %>
   <% end %>
