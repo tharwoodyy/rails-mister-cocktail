@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top object-fit_none">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" %>
+    <%#= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3nQq7tAmaTBPJntm4x-0Fr6VAUoWQnm4GRhGxulqyDnJcl_lZ" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,16 +11,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "", "#", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
+        <%= link_to "Create Cocktail", new_cocktail_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/tharwoodyy", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= image_tag "https://www.nicepng.com/png/detail/319-3194290_logo-black-cocktail-glass.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%= link_to "Log Out", "#", class: "dropdown-item" %>
         </div>
       </li>
     </ul>
@@ -29,16 +28,22 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80);">
   <div class="container">
-    <h1>Cocktails!</h1>
-    <p>Change your life and get a cocktail</p>
+    <h1>Mister Cocktail</h1>
+    <br>
+    <p>Choose your poison...</p>
+    <!-- <div class="new-cocktail"> -->
+      <br>
+    <%= link_to 'Create a new cocktail', new_cocktail_path, class: "btn btn-ghost" %>
+    </div>
 
   </div>
 </div>
 
+
 <div class="grid">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail), class: 'cocktail-card-holder' do %>
-      <div class="cocktail-card">
+      <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
         <h3><%= cocktail.name %></h3>
         <ul>
           <% cocktail.doses.each do |dose| %>
@@ -49,9 +54,7 @@
     <% end %>
   <% end %>
 </div>
-  <div class="new-cocktail">
-    <%= link_to 'Create a new cocktail', new_cocktail_path, class: "btn btn-ghost" %>
-  </div>
+
 
 <div class="footer">
   <div class="footer-links">
@@ -62,6 +65,6 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
   <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    Mr Cocktail 2020
   </div>
 </div>

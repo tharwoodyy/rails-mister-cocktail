@@ -2,12 +2,12 @@
   justify-content: space-between;
   background: white;
   background-color: transparent;
-  transition: 0.5s background-color ease;
-  color: white;
+  transition: 0.2s background-color ease;
+  color: #F4F4F4;
 }
 
 .navbar-lewagon-white {
-  background-color: white;
+  background-color: #090B11;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,6 +15,20 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-  border-radius: 50px;
+  width: 50px;
+  border-radius: 50%;
+
 }
+ .navbar {
+  opacity: 1;
+ }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  opacity: 0.6;
+}
+

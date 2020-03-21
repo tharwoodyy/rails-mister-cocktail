@@ -1,6 +1,7 @@
 class DosesController < ApplicationController
   def index
     @doses = Dose.all
+    @cocktail = Cocktail(params[:id])
   end
 
   def new
