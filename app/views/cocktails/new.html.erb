@@ -1,11 +1,43 @@
-<div class="container">
-  <div class="container-new">
-    <!-- <div class="grid"> -->
-      <%= simple_form_for [ @cocktail ] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "Submit cocktail", class: "btn btn-ghost-new" %>
-      <% end %>
-    <!-- </div> -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top object-fit_none">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%#= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3nQq7tAmaTBPJntm4x-0Fr6VAUoWQnm4GRhGxulqyDnJcl_lZ" %>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Create Cocktail", new_cocktail_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://www.nicepng.com/png/detail/319-3194290_logo-black-cocktail-glass.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Log Out", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80);">
+  <div class="container">
+  <div class="container">
+    <div class="container-new">
+      <!-- <div class="grid"> -->
+        <%= simple_form_for [ @cocktail ] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Submit cocktail", class: "btn btn-ghost-new" %>
+        <% end %>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+
